@@ -268,3 +268,11 @@ if ( ! function_exists( 'finazi_woocommerce_header_cart' ) ) {
 		<?php
 	}
 }
+
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+
+add_action( 'woocommerce_before_main_content', 'container_open', 5 );
+add_action( 'woocommerce_sidebar' ,'container_close', 10 );

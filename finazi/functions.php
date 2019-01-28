@@ -188,6 +188,15 @@ function finazi_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+    // General scripts.
+    wp_enqueue_script(
+        'finazi-general',
+        THEME_URI . '/js/general.js',
+        array( 'jquery' ),
+        null,
+        true
+    );
 }
 add_action( 'wp_enqueue_scripts', 'finazi_scripts' );
 
@@ -223,6 +232,19 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  */
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
+}
+
+// Quote after footer style.
+if ( ! function_exists( 'finazi_quote_footer_style' ) ) {
+    function finazi_quote_footer_style() {
+        $color    = get_option( 'finazi_quote_footer_color' );
+        $bg_color = get_option( 'finazi_quote_footer_background' );
+
+        $style = 'color: ' . $color . ';';
+        $style .= 'background-color: ' . $bg_color;
+
+        echo $style;
+    }
 }
 
 // Footer style.
@@ -307,6 +329,21 @@ if ( ! function_exists( 'finazi_page_header_background' ) ) {
 
         if ( false != $bg_header ) {
             $style .= 'background-image: url(' . $bg_header . ')';
+        }
+
+        echo $style;
+    }
+}
+
+// Replace image background Quote Footer.
+if ( ! function_exists( 'finazi_quote_footer_background' ) ) {
+    function finazi_quote_footer_background() {
+        $bg_quote = get_option( 'finazi_quote_footer_background' );
+        $color     = get_option( 'background_footer_image' );
+        $style     = 'background-color: ' . $color . ';';
+
+        if ( false != $bg_quote ) {
+            $style .= 'background-image: url(' . $bg_quote . ')';
         }
 
         echo $style;

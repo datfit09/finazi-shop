@@ -36,3 +36,15 @@ function finazi_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'finazi_pingback_header' );
+
+if ( ! function_exists( 'container_open' ) ) {
+    function container_open() {
+        echo '<div class="container">';
+    }
+}
+
+if ( ! function_exists( 'container_close' ) ) {
+    function container_close() {
+        echo '</div>';
+    }
+}

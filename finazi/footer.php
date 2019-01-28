@@ -12,8 +12,15 @@
 ?>
 
 	</div><!-- #content -->
-	<footer id="colophon" class="site-footer" style="<?php finazi_footer_style(); ?>">
 
+    <div class="quote-footer" style="<?php finazi_quote_footer_style(); ?>" style="<?php finazi_page_footer_background(); ?>">
+        <div class="container">
+            <p><?php esc_html_e( 'We help you to create the best business plan, resource & execution!', 'finazi' ); ?></p>
+            <button class="quote-btn"> <?php esc_html_e( 'GET FREE QUOTE', 'finazi' ); ?> </button>
+        </div>
+    </div>
+
+	<footer id="colophon" class="site-footer" style="<?php finazi_footer_style(); ?>">
 		<div class="site-info">
             <div class="join-now" style="<?php finazi_page_footer_background(); ?>">
                 <div class="footer-widget">
@@ -31,7 +38,7 @@
                 <div class="container">
                     <div class="ft-copyright">
                         <div class="copyright">
-                            <?php echo esc_html( get_option( 'footer_left', 'Copyright' ) ); ?>
+                            <?php echo wp_kses_post( get_option( 'footer_left', 'Copyright' ) ); ?>
                         </div>
                         <div class="FAQ">
                             <?php echo wp_kses_post( get_option( 'footer_right', 'FAQ' ) ); ?>

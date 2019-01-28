@@ -27,24 +27,26 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'finazi' ); ?></a>
 
 	<header id="masthead" class="site-header">
-        <div class="top-bar">
+        <div class="top">
             <div class="container">
-                <?php
-                $left = get_option( 'topbar_left' );
-                $right = get_option( 'topbar_right' );
-                if ( '' != $left || '' != $right ) {
-                    ?>
-                    <div class="header-language">
-                        <?php echo wp_kses_post( get_option( 'topbar_left' ) ); ?>
-                    </div>
-                    <div class="header-contact">
-                        <?php echo wp_kses_post( get_option( 'topbar_right' ) ); ?>
-                    </div>
+                <div class="top-bar">
                     <?php
-                }
-                ?>
-                <div class="header-content">
-                    <?php echo wp_kses_post( get_option( 'hotline' ) ); ?>
+                    $left = get_option( 'topbar_left' );
+                    $right = get_option( 'topbar_right' );
+                    if ( '' != $left || '' != $right ) {
+                        ?>
+                        <div class="header-language">
+                            <?php echo wp_kses_post( get_option( 'topbar_left' ) ); ?>
+                        </div>
+                        <div class="header-contact">
+                            <?php echo wp_kses_post( get_option( 'topbar_right' ) ); ?>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                    <div class="header-content">
+                        <?php echo wp_kses_post( get_option( 'hotline' ) ); ?>
+                    </div>
                 </div>
             </div>
         </div>
