@@ -269,6 +269,23 @@ if ( ! function_exists( 'finazi_woocommerce_header_cart' ) ) {
 	}
 }
 
+
+function restaurant_woocommerce_active_body_class( $classes ) {
+    $classes[] = 'woocommerce-active';
+
+    $sidebar_shop = get_option( 'shop_sidebar', 'left' );
+    $sidebar_shop_single = get_option( 'shop_single_sidebar', 'full' );
+
+    if ( is_shop() ) {
+        $classes[] = $sidebar_shop . '-sidebar';
+    } elseif ( is_singular( 'product' ) ) {
+        $classes[] = $sidebar_shop_single . '-sidebar';
+    }
+
+    return $classes;
+}
+add_filter( 'body_class', 'restaurant_woocommerce_active_body_class' );
+
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
 
 remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
