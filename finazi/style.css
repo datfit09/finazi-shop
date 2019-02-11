@@ -2083,22 +2083,21 @@ a:hover, a:active {
 }
 
 .widget-title {
-  font-family: Open Sans, sans-serif;
-  font-size: 16px;
+  font-family: Source Sans Pro;
+  font-size: 24px;
   color: #404040;
   position: relative;
-  padding-left: 23px;
 }
 
 .widget-title:after {
-  position: absolute;
-  bottom: 7px;
-  border-radius: 3px;
-  left: 0;
   content: '';
-  width: 12px;
-  height: 12px;
-  background-color: transparent;
+  height: 3px;
+  width: 60px;
+  position: absolute;
+  background-color: #14f1e4;
+  bottom: -10px;
+  left: 0;
+  right: 0;
 }
 
 .tagcloud a {
@@ -6315,41 +6314,47 @@ span.onsale {
 }
 
 @media (min-width: 992px) {
-  .full-sidebar .single-product .site-content .container #primary #main .product {
-    width: 100%;
+  .full-sidebar .site-content .container {
+    margin-top: 100px;
+  }
+  .full-sidebar .site-content .container aside#secondary {
+    display: none;
   }
 }
 
 @media (min-width: 992px) {
-  .left-sidebar .single-product .site-content .container #primary {
-    margin-left: 0;
+  .left-sidebar .site-content .container {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  .left-sidebar .site-content .container #primary {
     float: right;
-  }
-}
-
-.right-sidebar .single-product .site-content #primary {
-  margin-left: 0;
-  margin-right: 30px;
-}
-
-@media (max-width: 991px) {
-  .single #primary {
-    float: left;
-    width: 100%;
-  }
-}
-
-@media (max-width: 991px) and (min-width: 992px) {
-  .single #primary {
+    width: 80%;
     margin-left: 30px;
   }
+  .left-sidebar .site-content .container aside#secondary {
+    float: left;
+    width: calc(20% - 30px);
+  }
+}
+
+@media (min-width: 992px) {
+  .right-sidebar .site-content .container {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  .right-sidebar .site-content .container #primary {
+    float: left;
+    width: 80%;
+    margin-right: 30px;
+  }
+  .right-sidebar .site-content .container aside#secondary {
+    float: right;
+    width: calc(20% - 30px);
+  }
 }
 
 @media (max-width: 991px) {
-  .single #secondary {
-    float: left;
-    width: 100%;
-  }
   .single-product div.product .summary {
     width: 100%;
     display: block;
