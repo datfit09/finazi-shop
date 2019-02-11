@@ -74,24 +74,6 @@ ul.products {
     }
 }
 
-.archive {
-    .site-content{
-        margin-top: 100px;
-       #primary {
-            float: left;
-            width: 75%;
-            @media ( min-width: 992px ) {
-                margin-right: 30px;
-            }
-        }
-
-        #secondary {
-            float: left;
-            width: calc( 25% - 30px );
-        }
-    }
-}
-
 span.onsale {
     position: absolute;
     left: 15px;
@@ -104,4 +86,58 @@ span.onsale {
 .woocommerce-loop-product__title {
     text-transform: uppercase;
     text-align: center;
+}
+
+// no sidebar.
+.full-sidebar {
+    @media (min-width: 992px) {
+        .site-content .container {
+            margin-top: 100px;
+            aside#secondary {
+                display: none;
+            }
+        }
+    }
+}
+
+// left sidebar.
+.left-sidebar {
+    @media (min-width: 992px) {
+        .site-content .container {
+            margin-top: 100px;
+            margin-bottom: 100px;
+            #primary {
+                float: right;
+                width: 80%;
+                margin-left: 30px;
+            }
+            aside#secondary {
+                float: left;
+                width: calc(20% - 30px);
+            }
+        }
+    }
+}
+
+// right sidebar.
+.right-sidebar {
+    @media (min-width: 992px) {
+        .site-content .container {
+            margin-top: 100px;
+            margin-bottom: 100px;
+            #primary {
+                float: left;
+                width: 80%;
+                margin-right: 30px;
+            }
+            aside#secondary {
+                float: right;
+                width: calc(20% - 30px);
+            }
+        }
+    }
+}
+
+.star-rating {
+    display: none;
 }

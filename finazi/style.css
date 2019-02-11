@@ -6016,26 +6016,6 @@ ul.products li.product .button {
   border: 1px solid #e8e8e8;
 }
 
-.archive .site-content {
-  margin-top: 100px;
-}
-
-.archive .site-content #primary {
-  float: left;
-  width: 75%;
-}
-
-@media (min-width: 992px) {
-  .archive .site-content #primary {
-    margin-right: 30px;
-  }
-}
-
-.archive .site-content #secondary {
-  float: left;
-  width: calc( 25% - 30px);
-}
-
 span.onsale {
   position: absolute;
   left: 15px;
@@ -6048,6 +6028,51 @@ span.onsale {
 .woocommerce-loop-product__title {
   text-transform: uppercase;
   text-align: center;
+}
+
+@media (min-width: 992px) {
+  .full-sidebar .site-content .container {
+    margin-top: 100px;
+  }
+  .full-sidebar .site-content .container aside#secondary {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .left-sidebar .site-content .container {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  .left-sidebar .site-content .container #primary {
+    float: right;
+    width: 80%;
+    margin-left: 30px;
+  }
+  .left-sidebar .site-content .container aside#secondary {
+    float: left;
+    width: calc(20% - 30px);
+  }
+}
+
+@media (min-width: 992px) {
+  .right-sidebar .site-content .container {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  .right-sidebar .site-content .container #primary {
+    float: left;
+    width: 80%;
+    margin-right: 30px;
+  }
+  .right-sidebar .site-content .container aside#secondary {
+    float: right;
+    width: calc(20% - 30px);
+  }
+}
+
+.star-rating {
+  display: none;
 }
 
 /**
@@ -6697,4 +6722,49 @@ p.no-comments {
 
 .widget_price_filter .ui-slider-horizontal .ui-slider-range {
   height: 100%;
+}
+
+/**
+ * Cart page
+ */
+/** * Cart page */
+.woocommerce-cart table,
+.woocommerce-cart th,
+.woocommerce-cart td {
+  border-left: none;
+  border-right: none;
+}
+
+.woocommerce-cart table {
+  border-top: none;
+}
+
+.woocommerce-cart th {
+  text-transform: uppercase;
+}
+
+.woocommerce-cart #sidebar {
+  display: none;
+}
+
+.woocommerce-cart #primary {
+  width: 100%;
+}
+
+.woocommerce-cart img.attachment-woocommerce_thumbnail.size-woocommerce_thumbnail {
+  border: 1px solid #cccccc;
+}
+
+.woocommerce-cart-form {
+  position: relative;
+}
+
+.woocommerce-cart-form .remove {
+  position: absolute;
+  right: 0;
+}
+
+.woocommerce-cart-form .product-remove {
+  width: 0px;
+  max-width: 0px;
 }

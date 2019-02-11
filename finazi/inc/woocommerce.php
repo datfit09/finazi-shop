@@ -47,6 +47,7 @@ function finazi_woocommerce_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'finazi_woocommerce_scripts' );
 
+
 /**
  * Disable the default WooCommerce stylesheet.
  *
@@ -292,4 +293,9 @@ remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_ad
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
 
 add_action( 'woocommerce_before_main_content', 'container_open', 5 );
-add_action( 'woocommerce_sidebar' ,'container_close', 10 );
+add_action( 'woocommerce_sidebar', 'container_close', 10 );
+
+
+// add finazi continue shopping.
+add_action( 'woocommerce_cart_actions', 'finazi_button_continue', 5 );
+

@@ -19,6 +19,10 @@ require_once THEME_DIR . 'inc/template-hooks.php';
 // link do_action to Template hooks.
 require_once THEME_DIR . 'inc/widgets/class-widget-recent-post-thumbnail.php';
 
+if ( class_exists( 'woocommerce' ) ) {
+    require_once THEME_DIR . 'inc/template-woocommerce-functions.php';
+}
+
 // Customize.
 function finazi( $wp_customize ) {
     $dir = glob( THEME_DIR . 'inc/customizer/*.php' );
@@ -382,3 +386,4 @@ if ( ! function_exists( 'finazi_pagination' ) ) {
     <?php
     }
 }
+
