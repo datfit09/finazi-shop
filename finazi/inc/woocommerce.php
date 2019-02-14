@@ -299,3 +299,5 @@ add_action( 'woocommerce_sidebar', 'container_close', 10 );
 // add finazi continue shopping.
 add_action( 'woocommerce_cart_actions', 'finazi_button_continue', 5 );
 
+// add clear shopping cart.
+add_action( 'woocommerce_cart_actions', 'finazi_button_clear', 10 );

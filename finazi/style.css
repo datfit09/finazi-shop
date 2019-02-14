@@ -6735,6 +6735,18 @@ p.no-comments {
   border-right: none;
 }
 
+.woocommerce-cart table a,
+.woocommerce-cart table span,
+.woocommerce-cart table input,
+.woocommerce-cart th a,
+.woocommerce-cart th span,
+.woocommerce-cart th input,
+.woocommerce-cart td a,
+.woocommerce-cart td span,
+.woocommerce-cart td input {
+  font-weight: bold;
+}
+
 .woocommerce-cart table {
   border-top: none;
 }
@@ -6767,4 +6779,56 @@ p.no-comments {
 .woocommerce-cart-form .product-remove {
   width: 0px;
   max-width: 0px;
+}
+
+.button-continue,
+.button-update,
+.button-clear,
+.coupon button {
+  border: 1px solid #152639;
+  height: 48px;
+  padding: 0 20px;
+  text-align: center;
+  padding-top: 10px;
+  font-family: Source Sans Pro;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-right: 30px;
+}
+
+.button-continue {
+  float: right;
+}
+
+.button-clear {
+  float: left;
+}
+
+.cart-collaterals {
+  width: 50%;
+  float: right;
+}
+
+.coupon {
+  display: inline-block;
+}
+
+.coupon input {
+  border: none;
+  border-bottom: 1px solid #cccccc;
+  color: #ccc;
+}
+
+.checkout-button {
+  border: 1px solid #14f1e4;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #14f1e4;
+  padding: 10px 20px;
+}
+
+.checkout-button:hover {
+  background-color: #000;
+  color: #14f1e4;
 }
