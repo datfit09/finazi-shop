@@ -7,16 +7,19 @@
  * @package finazi
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+if ( ! is_active_sidebar( 'main-sidebar' ) || ! is_active_sidebar( 'shop-widget' ) ) {
 	return;
 }
+
 ?>
 
-<aside id="secondary" class="widget-area">
-	<?php dynamic_sidebar( 'sidebar-1' ); 
-    
-    if ( is_active_sidebar( 'subscribe-widget' ) ) {
-        dynamic_sidebar( 'subscribe-widget' );
-    }
+<div id="sidebar" class="col-md-3 side-bar">
+    <?php
+
+        if ( class_exists( 'woocommerce' ) && is_active_sidebar( 'shop-widget' ) & ( is_shop() || is_product_category() || is_product_tag() || is_product() )  ) {
+            dynamic_sidebar( 'shop-widget' );
+        } else {
+            dynamic_sidebar( 'main-sidebar' );
+        }
     ?>
-</aside><!-- #secondary -->
+</div>

@@ -2,142 +2,68 @@
  * Products
  */
 
+.products {
+    clear: both;
+    padding-left: 0;
+    margin: 0;
 
-ul.products {
-	@include clearfix;
-	margin: 0;
-	padding: 0;
+    &:after{
+        content: '';
+        display: block;
+        clear: both;
+    }
 
-	li.product {
-		list-style: none;
-		position: relative;
-		margin-bottom: 2em;
+    .product {
+        list-style: none;
+        float: left;
+        margin: 0 30px 56px 0;
+        position: relative;
+        text-align: center;
 
-		.woocommerce-loop-product__title {
-			font-size: 1rem;
-		}
+        @media ( min-width: 375px ) and ( max-width: 991px ) {
+            width: calc( ( 100% - 30px ) / 2 );
 
-		img {
-			display: block;
-		}
+            &:nth-of-type( 2n ) {
+                margin-right: 0;
+            }
 
-		.button {
-			display: block;
-		}
-	}
-}
+            &:nth-of-type( 2n + 3 ) {
+                clear: both;
+            }
+        }
 
-@media screen and (min-width: 48em) {
-	ul.products {
-		li.product {
-			@include column-width(3);
-			float: left;
-			margin-right: $columns__margin;
+        @media ( max-width: 375px ) {
+            width: 100%;
+            clear: both;
+        }
+    }
 
-			&.first {
-				clear: both;
-			}
+    &.columns-1 {
+        .product{
+            width: 100%;
+            margin-right: 0;
+        }
+    }
 
-			&.last {
-				margin-right: 0;
-			}
-		}
-	}
-
-	.columns-1 {
-		ul.products {
-			li.product {
-				float: none;
-				width: 100%;
-			}
-		}
-	}
-
-	@for $i from 2 through 6 {
-		.columns-#{$i} {
-			ul.products {
-				li.product {
-					@include column-width( $i );
-				}
-			}
-		}
-	}
-}
     
-.product {
-    .woocommerce-LoopProduct-link {
-        img {
-            width: 270px;
-            height: 360px;
-            border: 1px solid #e8e8e8;
-        }
-    }
-}
+    @for $i from 2 through 6 {
+        &.columns-#{ $i } {
+            .product{
+                @media ( min-width: 992px ) {
+                    width: calc( ( 100% - #{ 30px * ( $i - 1 ) } ) / #{ $i } );
 
-span.onsale {
-    position: absolute;
-    left: 15px;
-    top: 15px;
-    width: 40px;
-    text-align: center;
-    background-color: #e46868;
-}
-
-.woocommerce-loop-product__title {
-    text-transform: uppercase;
-    text-align: center;
-}
-
-// no sidebar.
-.full-sidebar {
-    @media (min-width: 992px) {
-        .site-content .container {
-            margin-top: 100px;
-            aside#secondary {
-                display: none;
+                    &:nth-of-type( #{ $i }n ) {
+                        margin-right: 0;
+                    }
+                    
+                    &:nth-of-type( #{ $i }n + #{ $i + 1 } ) {
+                        clear: both;
+                    }
+                }
             }
         }
     }
 }
 
-// left sidebar.
-.left-sidebar {
-    @media (min-width: 992px) {
-        .site-content .container {
-            margin-top: 100px;
-            margin-bottom: 100px;
-            #primary {
-                float: right;
-                width: 80%;
-                margin-left: 30px;
-            }
-            aside#secondary {
-                float: left;
-                width: calc(20% - 30px);
-            }
-        }
-    }
-}
-
-// right sidebar.
-.right-sidebar {
-    @media (min-width: 992px) {
-        .site-content .container {
-            margin-top: 100px;
-            margin-bottom: 100px;
-            #primary {
-                float: left;
-                width: 80%;
-                margin-right: 30px;
-            }
-            aside#secondary {
-                float: right;
-                width: calc(20% - 30px);
-            }
-        }
-    }
-}
-
-.star-rating {
-    display: none;
-}
+// chay roi dau?
+// chay gulp chua?

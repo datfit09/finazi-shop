@@ -29,7 +29,6 @@ add_action( 'after_setup_theme', 'finazi_woocommerce_setup' );
  * @return void
  */
 function finazi_woocommerce_scripts() {
-	wp_enqueue_style( 'finazi-woocommerce-style', get_template_directory_uri() . '/woocommerce.css' );
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
@@ -92,16 +91,6 @@ function finazi_woocommerce_thumbnail_columns() {
 add_filter( 'woocommerce_product_thumbnails_columns', 'finazi_woocommerce_thumbnail_columns' );
 
 /**
- * Default loop columns on product archives.
- *
- * @return integer products per row.
- */
-function finazi_woocommerce_loop_columns() {
-	return 3;
-}
-add_filter( 'loop_shop_columns', 'finazi_woocommerce_loop_columns' );
-
-/**
  * Related Products Args.
  *
  * @param array $args related products args.
@@ -109,8 +98,8 @@ add_filter( 'loop_shop_columns', 'finazi_woocommerce_loop_columns' );
  */
 function finazi_woocommerce_related_products_args( $args ) {
 	$defaults = array(
-		'posts_per_page' => 3,
-		'columns'        => 3,
+		'posts_per_page' => 4,
+		'columns'        => 4,
 	);
 
 	$args = wp_parse_args( $defaults, $args );
@@ -119,30 +108,6 @@ function finazi_woocommerce_related_products_args( $args ) {
 }
 add_filter( 'woocommerce_output_related_products_args', 'finazi_woocommerce_related_products_args' );
 
-if ( ! function_exists( 'finazi_woocommerce_product_columns_wrapper' ) ) {
-	/**
-	 * Product columns wrapper.
-	 *
-	 * @return  void
-	 */
-	function finazi_woocommerce_product_columns_wrapper() {
-		$columns = finazi_woocommerce_loop_columns();
-		echo '<div class="columns-' . absint( $columns ) . '">';
-	}
-}
-add_action( 'woocommerce_before_shop_loop', 'finazi_woocommerce_product_columns_wrapper', 40 );
-
-if ( ! function_exists( 'finazi_woocommerce_product_columns_wrapper_close' ) ) {
-	/**
-	 * Product columns wrapper close.
-	 *
-	 * @return  void
-	 */
-	function finazi_woocommerce_product_columns_wrapper_close() {
-		echo '</div>';
-	}
-}
-add_action( 'woocommerce_after_shop_loop', 'finazi_woocommerce_product_columns_wrapper_close', 40 );
 
 /**
  * Remove default WooCommerce wrapper.
@@ -274,10 +239,10 @@ if ( ! function_exists( 'finazi_woocommerce_header_cart' ) ) {
 function restaurant_woocommerce_active_body_class( $classes ) {
     $classes[] = 'woocommerce-active';
 
-    $sidebar_shop = get_option( 'shop_sidebar', 'left' );
-    $sidebar_shop_single = get_option( 'shop_single_sidebar', 'full' );
+    $sidebar_shop = get_option( 'shop_sidebar', 'right' );
+    $sidebar_shop_single = get_option( 'shop_single_sidebar', 'no' );
 
-    if ( is_shop() ) {
+    if ( is_shop() || is_product_category() || is_product_tag() ) {
         $classes[] = $sidebar_shop . '-sidebar';
     } elseif ( is_singular( 'product' ) ) {
         $classes[] = $sidebar_shop_single . '-sidebar';
@@ -301,3 +266,12 @@ add_action( 'woocommerce_cart_actions', 'finazi_button_continue', 5 );
 
 // add clear shopping cart.
 add_action( 'woocommerce_cart_actions', 'finazi_button_clear', 10 );
+
+// add show Per Page.
+add_action( 'pre_get_posts', 'ps_pre_get_products_query' );
+function ps_pre_get_products_query( $query ) {
+    $per_page = filter_input(INPUT_GET, 'perpage', FILTER_SANITIZE_NUMBER_INT);
+    if( $query->is_main_query() && !is_admin() && is_post_type_archive( 'product' ) ) {
+        $query->set( 'posts_per_page', $per_page );
+    }
+}

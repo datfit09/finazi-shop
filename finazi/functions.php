@@ -154,7 +154,7 @@ function finazi_widgets_init() {
 	register_sidebar( 
         array(
     		'name'          => esc_html__( 'Sidebar', 'finazi' ),
-    		'id'            => 'sidebar-1',
+    		'id'            => 'main-sidebar',
     		'description'   => esc_html__( 'Add widgets here.', 'finazi' ),
     		'before_widget' => '<section id="%1$s" class="widget %2$s">',
     		'after_widget'  => '</section>',
@@ -173,6 +173,21 @@ function finazi_widgets_init() {
             'after_title'   => '</h2>',
         )
     );
+
+    // Add shop widget.
+    if ( class_exists( 'woocommerce' ) ) {
+        register_sidebar(
+            array(
+                'name'          => __( 'Shop Widget', 'finazi' ),
+                'id'            => 'shop-widget',
+                'description'   => __( 'Widgets for Shop page', 'finazi' ),
+                'before_widget' => '<ul id="%1$s" class="widget %2$s">',
+                'after_widget'  => '</ul>',
+                'before_title'  => '<h2 class="widget-title">',
+                'after_title'   => '</h2>',
+            )
+        );
+    }
 
 }
 add_action( 'widgets_init', 'finazi_widgets_init' );

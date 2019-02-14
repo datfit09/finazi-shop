@@ -22,9 +22,7 @@
         		</main>
             </div>
 
-            <div id="sidebar" class="col-md-3 side-bar">
-                <?php get_sidebar(); ?>
-            </div>
+           <?php get_sidebar(); ?>
         </div>
     </div>
 

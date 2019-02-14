@@ -227,7 +227,7 @@
 
 
 // no sidebar.
-.full-sidebar {
+.no-sidebar {
     @media (min-width: 992px) {
         .site-content .container {
             margin-top: 100px;
@@ -265,7 +265,7 @@
             margin-bottom: 100px;
             #primary {
                 float: left;
-                width: 80%;
+                width: 70%;
                 margin-right: 30px;
             }
             aside#secondary {
@@ -293,4 +293,128 @@
     .single-product div.product section.related.products h2 {
         font-size: 35px;
     }
+}
+
+// Product page.
+
+.product {
+    .woocommerce-LoopProduct-link {
+        img {
+            width: 270px;
+            height: 360px;
+            border: 1px solid #e8e8e8;
+        }
+    }
+}
+
+span.onsale {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    width: 40px;
+    text-align: center;
+    background-color: #e46868;
+}
+
+.woocommerce-loop-product__title {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+// no sidebar.
+.no-sidebar {
+    @media (min-width: 992px) {
+        .site-content .container {
+            margin-top: 100px;
+            div#sidebar {
+                display: none;
+            }
+        }
+    }
+}
+
+// left sidebar.
+.left-sidebar {
+    @media (min-width: 992px) {
+        .site-content .container {
+            margin-top: 100px;
+            margin-bottom: 100px;
+            #primary {
+                float: right;
+                width: 80%;
+                margin-left: 30px;
+            }
+            aside#secondary {
+                float: left;
+                width: calc(20% - 30px);
+            }
+        }
+    }
+}
+
+// right sidebar.
+.right-sidebar {
+    @media (min-width: 992px) {
+        .site-content .container {
+            margin-top: 100px;
+            margin-bottom: 100px;
+            #primary {
+                float: left;
+                width: 70%;
+                margin-right: 30px;
+            }
+            aside#secondary {
+                float: right;
+                width: calc(20% - 30px);
+            }
+        }
+    }
+}
+
+
+.star-rating {
+    display: none;
+}
+
+.woocommerce-pagination {
+    text-align: center;
+    .page-numbers {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        li {
+            .page-numbers {
+                width: 35px;
+                height: 35px;
+                border-radius: 50px;
+                &:hover {
+                    border: 1px solid #fff;
+                    background-color: #152639;
+                }
+            }
+            .current {
+                border: 1px solid #fff;
+                background-color: #152639;
+            }
+        }
+    }
+}
+
+.woocommerce-result-count {
+    float: left;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+.woocommerce-perpage,
+.woocommerce-ordering {
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 50px;
+
+    select {
+        width: auto;
+        background-color: #fff;
+        border: none;
+    } 
 }

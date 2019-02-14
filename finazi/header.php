@@ -80,6 +80,15 @@
             ?>
 
             <button id="pull"><a href="#menu" id="toggle"><span></span></a></button>
+
+
+            <div class="cart-view">
+                <button class="fa fa-shopping-cart">
+                    <a class="cart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>">
+                        <?php echo sprintf ( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> - <?php echo WC()->cart->get_cart_total(); ?>
+                    </a>
+                </button>
+            </div>
             
             <div class="search">
                 <button class="fa fa-search search-button demo-btn"></button>
