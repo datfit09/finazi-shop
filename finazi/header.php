@@ -83,12 +83,17 @@
 
 
             <div class="cart-view">
-                <button class="fa fa-shopping-cart">
+                <button class="fa fa-shopping-cart shop-cart-count">
+                    <?php
+                    if ( class_exists( 'woocommerce' ) ) {
+                    ?>
                     <a class="cart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>">
-                        <?php echo sprintf ( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> - <?php echo WC()->cart->get_cart_total(); ?>
+                        <?php echo WC()->cart->get_cart_contents_count(); ?>
                     </a>
+                    <?php }?>
                 </button>
             </div>
+
             
             <div class="search">
                 <button class="fa fa-search search-button demo-btn"></button>

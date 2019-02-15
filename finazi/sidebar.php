@@ -7,10 +7,9 @@
  * @package finazi
  */
 
-if ( ! is_active_sidebar( 'main-sidebar' ) || ! is_active_sidebar( 'shop-widget' ) ) {
+if ( ! is_active_sidebar( 'main-sidebar' ) || ! is_active_sidebar( 'shop-widget' ) || ( class_exists( 'woocommerce' ) && is_checkout() ) ) {
 	return;
 }
-
 ?>
 
 <div id="sidebar" class="col-md-3 side-bar">

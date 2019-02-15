@@ -1,10 +1,20 @@
-<?php get_header(); ?>
+<?php
+$col = '';
+if ( class_exists( 'woocommerce' ) && is_active_sidebar( 'shop-widget' ) & ( is_shop() || is_product_category() || is_product_tag() || is_product() ) ) { 
+    $col = 'col-md-8';
+} elseif ( class_exists( 'woocommerce' ) && is_checkout() ) {
+    $col = '';
+} elseif ( is_active_sidebar( 'main-sidebar' ) ) {
+    $col = 'col-md-8';
+}
+
+get_header();
+?>
 
     <div class="container">
         <div class="row">
-            <div id="primary" class="col-md-8 content-area">
+            <div id="primary" class="<?php echo esc_attr( $col ); ?> content-area">
                 <main id="main" class="site-main">
-
             	<?php
             		while ( have_posts() ) :
             			the_post();
@@ -18,7 +28,6 @@
 
             		endwhile; // End of the loop.
         		?>
-
         		</main>
             </div>
 

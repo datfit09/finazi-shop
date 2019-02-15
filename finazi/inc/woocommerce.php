@@ -192,13 +192,9 @@ if ( ! function_exists( 'finazi_woocommerce_cart_link' ) ) {
 		?>
 		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'finazi' ); ?>">
 			<?php
-			$item_count_text = sprintf(
-				/* translators: number of items in the mini cart. */
-				_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'finazi' ),
-				WC()->cart->get_cart_contents_count()
-			);
+			$item_count_text = WC()->cart->get_cart_contents_count();
 			?>
-			<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo esc_html( $item_count_text ); ?></span>
+			<span class="count"><?php echo esc_html( $item_count_text ); ?></span>
 		</a>
 		<?php
 	}
@@ -224,7 +220,7 @@ if ( ! function_exists( 'finazi_woocommerce_header_cart' ) ) {
 			<li>
 				<?php
 				$instance = array(
-					'title' => '',
+					'title' => 'finazi',
 				);
 
 				the_widget( 'WC_Widget_Cart', $instance );
