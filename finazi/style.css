@@ -1774,6 +1774,7 @@ a:hover, a:active {
 
 .search {
   width: 24px;
+  float: left;
 }
 
 .search button {
@@ -2663,13 +2664,59 @@ article {
   height: 50px;
 }
 
+@media (max-width: 680px) {
+  .top-bar {
+    height: auto;
+  }
+}
+
+@media (max-width: 375px) {
+  .header-language,
+  .header-contact {
+    margin-right: 15px;
+  }
+  .header-language a,
+  .header-contact a {
+    font-size: 10px !important;
+  }
+  .header-content {
+    height: 50px !important;
+    width: 100% !important;
+  }
+}
+
 .header-language a {
   color: #fff;
+}
+
+@media (max-width: 991px) {
+  .header-language {
+    margin-right: 30px;
+  }
 }
 
 .header-contact .header-right {
   margin-right: 35px;
   color: #fff;
+  float: left;
+}
+
+@media (max-width: 1199px) {
+  .header-contact .header-right {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 992px) {
+  .header-contact .header-right {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .header-contact .header-right {
+    margin-right: 15px;
+  }
 }
 
 .header-contact .header-right:hover {
@@ -2794,10 +2841,13 @@ article {
 
 .contact-list span {
   margin-right: 15px;
+  width: 20px;
+  text-align: center;
 }
 
 .contact-list span:before {
   font-size: 18px;
+  color: #14f1e4;
 }
 
 .link:before {
@@ -5978,7 +6028,7 @@ table.shop_table_responsive tr td.download-actions .button {
 .products .product {
   list-style: none;
   float: left;
-  margin: 0 30px 56px 0;
+  margin: 0 30px 60px 0;
   position: relative;
   text-align: center;
 }
@@ -7004,6 +7054,8 @@ p.no-comments {
 .cart-view {
   margin-right: 20px;
   position: relative;
+  width: 42px;
+  float: left;
 }
 
 .shop-cart-count {
