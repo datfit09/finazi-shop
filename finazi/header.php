@@ -106,7 +106,7 @@
             <div class="container">
 
                 <?php finazi_title_blog(); ?>
-                <?php finazi_description_blog(); ?>
+                <?php woocommerce_breadcrumb(); ?>
 
             </div>
         </div>
