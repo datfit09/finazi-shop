@@ -33,7 +33,8 @@
                     <?php
                     $left = get_option( 'topbar_left' );
                     $right = get_option( 'topbar_right' );
-                    if ( '' != $left || '' != $right ) {
+                    $hotline = get_option( 'hotline' );
+                    if ( '' != $left || '' != $right || '' != $hotline ) {
                         ?>
                         <div class="header-language">
                             <?php echo wp_kses_post( get_option( 'topbar_left' ) ); ?>
@@ -41,12 +42,12 @@
                         <div class="header-contact">
                             <?php echo wp_kses_post( get_option( 'topbar_right' ) ); ?>
                         </div>
+                        <div class="header-content">
+                            <?php echo wp_kses_post( get_option( 'hotline' ) ); ?>
+                        </div>
                         <?php
                     }
-                    ?>
-                    <div class="header-content">
-                        <?php echo wp_kses_post( get_option( 'hotline' ) ); ?>
-                    </div>
+                    ?>                    
                 </div>
             </div>
         </div>
