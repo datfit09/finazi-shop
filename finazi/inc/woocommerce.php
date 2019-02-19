@@ -173,7 +173,7 @@ if ( ! function_exists( 'finazi_woocommerce_cart_link_fragment' ) ) {
 	function finazi_woocommerce_cart_link_fragment( $fragments ) {
 		ob_start();
 		finazi_woocommerce_cart_link();
-		$fragments['a.cart-contents'] = ob_get_clean();
+		$fragments['a.cart-count'] = ob_get_clean();
 
 		return $fragments;
 	}
@@ -190,7 +190,7 @@ if ( ! function_exists( 'finazi_woocommerce_cart_link' ) ) {
 	 */
 	function finazi_woocommerce_cart_link() {
 		?>
-		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'finazi' ); ?>">
+		<a class="fa fa-shopping-bag shop-cart-count cart-count" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'finazi' ); ?>">
 			<?php
 			$item_count_text = WC()->cart->get_cart_contents_count();
 			?>

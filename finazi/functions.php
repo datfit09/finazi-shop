@@ -260,7 +260,7 @@ if ( ! function_exists( 'finazi_quote_footer_style' ) ) {
         $bg_color = get_option( 'finazi_quote_footer_background' );
 
         $style = 'color: ' . $color . ';';
-        $style .= 'background-color: ' . $bg_color;
+        $style .= 'background-image: url(' . $bg_color . ')';
 
         echo $style;
     }

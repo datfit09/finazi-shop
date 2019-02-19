@@ -13,10 +13,22 @@
 
 	</div><!-- #content -->
 
-    <div class="quote-footer" style="<?php finazi_quote_footer_style(); ?>" style="<?php finazi_page_footer_background(); ?>">
+    <div class="quote-footer" style="<?php finazi_quote_footer_style(); ?>">
         <div class="container">
-            <p><?php esc_html_e( 'We help you to create the best business plan, resource & execution!', 'finazi' ); ?></p>
-            <button class="quote-btn"> <?php esc_html_e( 'GET FREE QUOTE', 'finazi' ); ?> </button>
+            <?php
+            $left_quote = get_option( 'quote_left' );
+            $right_quote = get_option( 'quote_right' );
+            if ( '' != $left_quote || '' != $right_quote ) {
+                ?>
+                <p>
+                    <?php echo wp_kses_post( get_option( 'quote_left' ) ); ?>
+                </p>
+                <button class="quote-btn">
+                    <?php echo wp_kses_post( get_option( 'quote_right' ) ); ?>
+                </button>
+                <?php
+            }
+            ?>
         </div>
     </div>
 
@@ -38,10 +50,10 @@
                 <div class="container">
                     <div class="ft-copyright">
                         <div class="copyright">
-                            <?php echo wp_kses_post( get_option( 'footer_left', 'Copyright' ) ); ?>
+                            <?php echo wp_kses_post( get_option( 'footer_left', 'Copyright © 2016 ConsultWP, Designed by FelixDG.' ) ); ?>
                         </div>
                         <div class="FAQ">
-                            <?php echo wp_kses_post( get_option( 'footer_right', 'FAQ' ) ); ?>
+                            <?php echo wp_kses_post( get_option( 'footer_right', 'Back to top' ) ); ?>
                         </div>
                     </div>
                 </div>

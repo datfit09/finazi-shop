@@ -83,15 +83,16 @@
 
 
             <div class="cart-view">
-                <button class="fa fa-shopping-cart shop-cart-count">
-                    <?php
-                    if ( class_exists( 'woocommerce' ) ) {
-                    ?>
-                    <a class="cart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>">
-                        <?php echo WC()->cart->get_cart_contents_count(); ?>
-                    </a>
-                    <?php }?>
-                </button>
+                <?php
+                if ( class_exists( 'woocommerce' ) ) {
+                ?>
+                <a class="fa fa-shopping-bag shop-cart-count cart-count" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>">
+                    <span class="count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                </a>
+                <div class="mini-cart">
+                    <?php woocommerce_mini_cart(); ?>
+                </div>
+                <?php } ?>
             </div>
 
             
