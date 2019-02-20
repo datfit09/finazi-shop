@@ -1772,12 +1772,12 @@ a:hover, a:active {
   }
 }
 
-.search {
+.search-btn {
   width: 24px;
   float: left;
 }
 
-.search button {
+.search-btn button {
   border: 1px solid #152639;
   color: #fff;
   background-color: #152639;
@@ -1788,7 +1788,7 @@ a:hover, a:active {
   align-items: center;
 }
 
-.search button:hover {
+.search-btn button:hover {
   background-color: #fff;
   color: #152639;
 }
@@ -6358,7 +6358,6 @@ table.shop_table_responsive tr td.download-actions .button {
 }
 
 .single-product div.product section.related.products ul.products {
-  float: left;
   margin-bottom: 80px;
 }
 

@@ -58,19 +58,6 @@ add_action( 'wp_enqueue_scripts', 'finazi_woocommerce_scripts' );
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
 /**
- * Add 'woocommerce-active' class to the body tag.
- *
- * @param  array $classes CSS classes applied to the body tag.
- * @return array $classes modified to include 'woocommerce-active' class.
- */
-function finazi_woocommerce_active_body_class( $classes ) {
-	$classes[] = 'woocommerce-active';
-
-	return $classes;
-}
-add_filter( 'body_class', 'finazi_woocommerce_active_body_class' );
-
-/**
  * Products per page.
  *
  * @return integer number of products.
@@ -235,8 +222,12 @@ if ( ! function_exists( 'finazi_woocommerce_header_cart' ) ) {
 function restaurant_woocommerce_active_body_class( $classes ) {
     $classes[] = 'woocommerce-active';
 
-    $sidebar_shop = get_option( 'shop_sidebar', 'right' );
+    $sidebar_shop        = get_option( 'shop_sidebar', 'right' );
     $sidebar_shop_single = get_option( 'shop_single_sidebar', 'no' );
+
+    if ( ! is_active_sidebar( 'shop-widget' ) ) {
+        $sidebar_shop = $sidebar_shop_single = 'no';
+    }
 
     if ( is_shop() || is_product_category() || is_product_tag() ) {
         $classes[] = $sidebar_shop . '-sidebar';

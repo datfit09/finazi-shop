@@ -97,7 +97,7 @@
             </div>
 
             
-            <div class="search">
+            <div class="search-btn">
                 <button class="fa fa-search search-button demo-btn"></button>
             </div>
         </div>

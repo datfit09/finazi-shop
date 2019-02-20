@@ -70,7 +70,7 @@
             <button class="modal-close">x</button>
         </div>
         <div class="modal-content">
-            <?php get_search_form(); ?>
+            <?php get_product_search_form(); ?>
         </div>
         <div class="modal-action">
             <button class="btn modal-close"><?php echo wp_kses_post( 'Close' , 'finazi' ); ?></button>
