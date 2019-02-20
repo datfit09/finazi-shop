@@ -63,7 +63,6 @@
 </div>
 
 <div class="menu-overlay"></div>
-
 <div class="modal">
     <div class="modal-view">
         <div class="modal-header">

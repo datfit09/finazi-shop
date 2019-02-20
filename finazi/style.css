@@ -2143,6 +2143,12 @@ a:hover, a:active {
 .widgettitle,
 .title-widget {
   color: #fff;
+  font-size: 14px;
+  font-family: Source Sans Pro;
+}
+
+.widgettitle {
+  font-size: 20px;
 }
 
 .widget_recent_reviews img {
@@ -2826,6 +2832,10 @@ article {
   margin-right: 10px;
 }
 
+.widget_text .textwidget .social-footer span:before {
+  font-size: 24px;
+}
+
 .name-footer,
 .email-footer {
   margin-bottom: 15px;
@@ -3005,6 +3015,14 @@ object {
 /*--------------------------------------------------------------
 # Font
 --------------------------------------------------------------*/
+@font-face {
+  font-family: 'star';
+  src: url("assets/fonts/star.eot");
+  src: url("assets/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("assets/fonts/star.woff") format("woff"), url("assets/fonts/star.ttf") format("truetype"), url("assets/fonts/star.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /*! *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License) */
 @font-face {
   font-family: 'FontAwesome';
