@@ -34,23 +34,26 @@
                     $left = get_option( 'topbar_left' );
                     $right = get_option( 'topbar_right' );
                     $hotline = get_option( 'hotline' );
-                    if ( '' != $left || '' != $right || '' != $hotline ) {
+                    if ( ! empty( $left ) ) {
                         ?>
-                        <div class="header-language">
-                            <?php echo wp_kses_post( get_option( 'topbar_left' ) ); ?>
-                        </div>
-                        <div class="header-contact">
-                            <?php echo wp_kses_post( get_option( 'topbar_right' ) ); ?>
-                        </div>
-                        <div class="header-content">
-                            <?php echo wp_kses_post( get_option( 'hotline' ) ); ?>
-                        </div>
+                        <div class="header-language topbar-item"><?php echo wp_kses_post( $left ); ?></div>
                         <?php
                     }
-                    ?>                    
+                    if ( ! empty( $right ) ) {
+                        ?>
+                        <div class="header-contact topbar-item"><?php echo wp_kses_post( $right ); ?></div>
+                        <?php
+                    }
+                    if ( ! empty( $hotline ) ) {
+                        ?>
+                        <div class="header-content topbar-item"><?php echo wp_kses_post( $hotline ); ?></div>
+                        <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>
+        
 
     	<div class="container container_header">
             <div class="site-branding">

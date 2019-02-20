@@ -12,18 +12,23 @@
 ?>
 
 	</div><!-- #content -->
+    
 
     <div class="quote-footer" style="<?php finazi_quote_footer_style(); ?>">
         <div class="container">
             <?php
             $left_quote = get_option( 'quote_left' );
             $right_quote = get_option( 'quote_right' );
-            if ( '' != $left_quote || '' != $right_quote ) {
+            if ( ! empty( $left_quote )  ) {
                 ?>
-                <p>
-                    <?php echo wp_kses_post( get_option( 'quote_left' ) ); ?>
+                <p class="quote-item" >
+                    <?php echo wp_kses_post( $left_quote ); ?>
                 </p>
-                <button class="quote-btn">
+                <?php
+            }
+            if ( ! empty( $right_quote ) ) {
+                ?>
+                <button class="quote-btn quote-item">
                     <?php echo wp_kses_post( get_option( 'quote_right' ) ); ?>
                 </button>
                 <?php

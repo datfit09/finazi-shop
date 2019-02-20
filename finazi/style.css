@@ -2667,11 +2667,17 @@ article {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.top-bar .topbar-item {
   height: 50px;
+  display: inline-flex;
+  height: 50px;
+  align-items: center;
 }
 
 @media (max-width: 680px) {
-  .top-bar {
+  .top-bar .topbar-item {
     height: auto;
   }
 }
@@ -2801,10 +2807,16 @@ article {
 ## Footer
 --------------------------------------------------------------*/
 .quote-footer .container {
-  height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.quote-footer .container .quote-item {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .quote-footer .container p {
@@ -6931,6 +6943,7 @@ p.no-comments {
 
 .woocommerce-cart img.attachment-woocommerce_thumbnail.size-woocommerce_thumbnail {
   border: 1px solid #cccccc;
+  max-width: 100px;
 }
 
 .woocommerce-cart input {
@@ -7166,6 +7179,7 @@ p.no-comments {
   min-width: 240px;
   padding: 10px 15px;
   transition-duration: 0.3s;
+  z-index: 10;
 }
 
 .cart-view .mini-cart img.attachment-woocommerce_thumbnail.size-woocommerce_thumbnail {
