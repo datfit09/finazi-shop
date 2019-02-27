@@ -173,3 +173,106 @@
         width: 33%;
     }
 }
+
+// our-blog.
+.our-blog {
+    .blog-post-img {
+        position: relative;
+    }
+    .blog-info {
+        position: absolute;
+        bottom: 71px;
+        right: 15px;
+        height: 55px;
+        display: flex;
+        justify-content: center;
+        width: 70%;
+        align-items: center;
+        background-color: #fff;
+
+        .blog-date,
+        .blog-author {
+            float: left;
+            padding: 0 18px;
+            span {
+                margin-right: 10px;
+                &:before {
+                    color: #14f1e4;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .blog-date {
+            border-right: 1px solid #ddd;
+        }
+    }
+
+    .blog-title {
+        a {
+            font-size: 20px;
+            font-family: $font__tittle;
+            font-weight: bold;
+        }
+    }
+}
+
+// Counter Widget.
+.elementor-widget-container{
+    .counter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        .counter-image {
+            margin-right: 30px;
+            img {
+                max-width: 80px;
+            }
+        }
+        .counter-info {            
+            .counter_number {
+                font-size: 36px;
+                font-family: $font__tittle;
+                font-weight: bold;
+                color: #152639;
+            }
+        }
+    }
+}
+
+// Intro Widget.
+.intro {
+    position: relative;
+    overflow: hidden;
+    &:hover .info-intro {
+        bottom: 0;
+        left: 0;
+    }
+}
+
+.image-intro {
+}
+
+.info-intro {
+    position: absolute;
+    bottom: -65px;
+    left: 30px;
+    width: 100%;
+    background-color: rgba( 21, 38, 57, 0.9);
+    padding: 20px;
+    transition-duration: 0.3s;
+    .intro-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        i {
+            margin-right: 15px;
+            &:before {
+                color: #14f1e4;
+                font-size: 48px;
+            }
+        }
+    }
+}

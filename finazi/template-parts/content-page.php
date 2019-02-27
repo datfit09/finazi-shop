@@ -3,7 +3,7 @@
 	<header class="entry-header">
         <?php
 
-        if ( class_exists( 'woocommerce' ) && ! is_checkout() ) {
+        if ( class_exists( 'woocommerce' ) && ! is_checkout() && ! is_front_page() ) {
             the_title( '<h1 class="entry-title">', '</h1>' );
         }
 

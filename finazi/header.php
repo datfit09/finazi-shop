@@ -105,14 +105,16 @@
             </div>
         </div>
 
-        <div class="banner" style="<?php finazi_page_header_background(); ?>">
-            <div class="container">
-
-                <?php finazi_title_blog(); ?>
-                <?php woocommerce_breadcrumb(); ?>
-
+        <?php if ( ! is_front_page() ) {?>
+            <div class="banner" style="<?php finazi_page_header_background(); ?>">
+                <div class="container">
+                    <?php finazi_title_blog(); ?>
+                    <?php woocommerce_breadcrumb(); ?>
+                </div>
             </div>
-        </div>
+        <?php
+        }
+        ?>
 	</header>
 
 	<div id="content" class="site-content">

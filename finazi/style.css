@@ -764,7 +764,7 @@ body {
 }
 
 a {
-  font-size: 14px !important;
+  font-size: 14px;
   transition-duration: 0.3s;
   text-decoration: none;
 }
@@ -2155,6 +2155,107 @@ a:hover, a:active {
   width: 33%;
 }
 
+.our-blog .blog-post-img {
+  position: relative;
+}
+
+.our-blog .blog-info {
+  position: absolute;
+  bottom: 71px;
+  right: 15px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  align-items: center;
+  background-color: #fff;
+}
+
+.our-blog .blog-info .blog-date,
+.our-blog .blog-info .blog-author {
+  float: left;
+  padding: 0 18px;
+}
+
+.our-blog .blog-info .blog-date span,
+.our-blog .blog-info .blog-author span {
+  margin-right: 10px;
+}
+
+.our-blog .blog-info .blog-date span:before,
+.our-blog .blog-info .blog-author span:before {
+  color: #14f1e4;
+  font-size: 16px;
+}
+
+.our-blog .blog-info .blog-date {
+  border-right: 1px solid #ddd;
+}
+
+.our-blog .blog-title a {
+  font-size: 20px;
+  font-family: Source Sans Pro;
+  font-weight: bold;
+}
+
+.elementor-widget-container .counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.elementor-widget-container .counter .counter-image {
+  margin-right: 30px;
+}
+
+.elementor-widget-container .counter .counter-image img {
+  max-width: 80px;
+}
+
+.elementor-widget-container .counter .counter-info .counter_number {
+  font-size: 36px;
+  font-family: Source Sans Pro;
+  font-weight: bold;
+  color: #152639;
+}
+
+.intro {
+  position: relative;
+  overflow: hidden;
+}
+
+.intro:hover .info-intro {
+  bottom: 0;
+  left: 0;
+}
+
+.info-intro {
+  position: absolute;
+  bottom: -65px;
+  left: 30px;
+  width: 100%;
+  background-color: rgba(21, 38, 57, 0.9);
+  padding: 20px;
+  transition-duration: 0.3s;
+}
+
+.info-intro .intro-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-intro .intro-title i {
+  margin-right: 15px;
+}
+
+.info-intro .intro-title i:before {
+  color: #14f1e4;
+  font-size: 48px;
+}
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -2176,29 +2277,13 @@ a:hover, a:active {
   display: block;
 }
 
-.post,
-.page {
-  margin: 0 0 1.5em;
-}
-
 .updated:not(.published) {
   display: none;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-  margin: 1.5em 0 0;
 }
 
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
-}
-
-article {
-  padding: 50px 0;
-  border-bottom: 1px solid #f0f0f0;
 }
 
 .entry-meta {

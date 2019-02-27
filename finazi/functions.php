@@ -404,3 +404,7 @@ if ( ! function_exists( 'finazi_pagination' ) ) {
     }
 }
 
+if ( defined( 'ELEMENTOR_VERSION' ) ) {
+    require_once THEME_DIR . 'inc/elementor.php';
+}
+
