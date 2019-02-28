@@ -2256,6 +2256,82 @@ a:hover, a:active {
   font-size: 48px;
 }
 
+.widget-firstname,
+.widget-phonenumber {
+  width: 49%;
+  float: left;
+  margin-bottom: 2%;
+}
+
+.widget-firstname .your-name input,
+.widget-firstname .your-telephone input,
+.widget-phonenumber .your-name input,
+.widget-phonenumber .your-telephone input {
+  background-color: #fff;
+}
+
+.widget-firstname {
+  margin-right: 2%;
+}
+
+.widget-button .button-submit {
+  width: 49%;
+  float: left;
+  height: 40px;
+  background: #152639 !important;
+  border: none !important;
+  color: #fff !important;
+  font-size: 16px !important;
+  font-family: Source Sans Pro;
+  font-weight: bold;
+}
+
+.widget-button .button-submit:hover {
+  color: #152639 !important;
+  background-color: #fff !important;
+  border: 1px solid #152639 !important;
+}
+
+.finazi-content-testimonial {
+  padding: 30px;
+  border: 1px solid #ddd;
+}
+
+.finazi-content-testimonial {
+  position: relative;
+  background: #fff;
+  border: 5px solid #ddd;
+}
+
+.finazi-content-testimonial:after, .finazi-content-testimonial:before {
+  top: 100%;
+  left: 10%;
+  border: 5px solid #ddd;
+  content: '';
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.finazi-content-testimonial:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-top-color: #fff;
+  border-width: 12px;
+  margin-left: -12px;
+}
+
+.finazi-content-testimonial:before {
+  border-color: rgba(255, 255, 255, 0);
+  border-top-color: #fff;
+  border-width: 19px;
+  margin-left: -19px;
+}
+
+.video-popup {
+  text-align: center;
+}
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
