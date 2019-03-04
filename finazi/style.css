@@ -2332,6 +2332,20 @@ a:hover, a:active {
   text-align: center;
 }
 
+.js-modal-btn img {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.js-modal-btn img:hover {
+  opacity: 1;
+  transform: scale(1.5, 1.5);
+}
+
+.testimonial-carousel {
+  width: 90%;
+}
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/

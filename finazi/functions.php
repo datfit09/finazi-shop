@@ -202,6 +202,10 @@ function finazi_scripts() {
 
     wp_enqueue_style( 'ionicons-font', get_template_directory_uri() . '/assets/css/modal-video.min.css', array(), null );
 
+    wp_enqueue_style( 'slick-theme', get_template_directory_uri() . '/assets/css/slick-theme.css', array(), null );
+
+    wp_enqueue_style( 'slick', get_template_directory_uri() . '/assets/css/slick.css', array(), null );
+
     wp_enqueue_style( 'ionicons-font', get_template_directory_uri() . '/assets/css/ionicons.min.css', array(), null );
 
 	wp_enqueue_script( 'finazi-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
@@ -407,6 +411,6 @@ if ( ! function_exists( 'finazi_pagination' ) ) {
 }
 
 if ( defined( 'ELEMENTOR_VERSION' ) ) {
-    require_once THEME_DIR . 'inc/elementor.php';
+    // require_once THEME_DIR . 'inc/elementor.php';
 }
 

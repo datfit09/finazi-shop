@@ -345,7 +345,22 @@
     margin-left: -19px;
 }
 
-// video-popup
+// video-popup.
 .video-popup {
     text-align: center;
+}
+.js-modal-btn {
+    img {
+        cursor: pointer;
+        opacity: 0.5;
+        &:hover {
+            opacity: 1;
+            transform: scale( 1.5, 1.5 );
+        }
+    }
+}
+
+// testimonial.
+.testimonial-carousel {
+    width: 90% !important;
 }

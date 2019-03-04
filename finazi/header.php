@@ -109,7 +109,11 @@
             <div class="banner" style="<?php finazi_page_header_background(); ?>">
                 <div class="container">
                     <?php finazi_title_blog(); ?>
-                    <?php woocommerce_breadcrumb(); ?>
+                    <?php 
+                    if ( class_exists( 'woocommerce' ) ) {
+                        woocommerce_breadcrumb();
+                    }
+                    ?>
                 </div>
             </div>
         <?php
